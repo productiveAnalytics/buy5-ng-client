@@ -1,6 +1,7 @@
 <div class="product-list">
   <div class="product-list-block">
-    <p>Product List:</p>
+    <input type="hidden" name="username" [value]="username" />
+    <h2>Product List:</h2>
     <table>
       <tr class="table-header">
         <th>Name</th>
@@ -15,8 +16,10 @@
         <td class="inventory">{{product.inventory}}</td>
         <td>{{product.cat_id}}</td>
         <td>
-            {{product.pid}}
-            <!--button name="Buy"-->
+            <input type="hidden" [value]="product.pid" />
+            <button [disabled]="product.inventory < 5" 
+                    [name]="product.name" 
+                    (click)="processOrder(username, product.name)">Buy5</button>
         </td>
       </tr>
     </table>

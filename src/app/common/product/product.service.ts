@@ -11,6 +11,7 @@ export class ProductService {
   constructor(private http : HttpClient) { }
 
   getAll() : Observable<any> {
+    console.log('GET: '+ this.GET_ALL_PRODUCTS_URL);
     return this.http.get(this.GET_ALL_PRODUCTS_URL);
   }
 
