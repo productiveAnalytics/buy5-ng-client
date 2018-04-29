@@ -1,0 +1,24 @@
+<div class="product-list">
+  <div class="product-list-block">
+    <p>Product List:</p>
+    <table>
+      <tr class="table-header">
+        <th>Name</th>
+        <th>Description</th>
+        <th>Inventory</th>
+        <th>Category</th>
+        <th><!--Action--></th>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td>{{product.name}}</td>
+        <td>{{product.display_name}}</td>
+        <td class="inventory">{{product.inventory}}</td>
+        <td>{{product.cat_id}}</td>
+        <td>
+            {{product.pid}}
+            <!--button name="Buy"-->
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
